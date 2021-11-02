@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-11-02T04:32:17Z" name="Default suite" finished-at="2021-11-02T04:32:32Z" duration-ms="15593">
+    <groups>
+    </groups>
+    <test started-at="2021-11-02T04:32:17Z" name="Default test" finished-at="2021-11-02T04:32:32Z" duration-ms="15593">
+      <class name="com.simplilearn.workshop.ICINmain.PositiveTests">
+        <test-method signature="positiveTest()[pri:0, instance:com.simplilearn.workshop.ICINmain.PositiveTests@6986852]" started-at="2021-11-02T04:32:17Z" name="positiveTest" finished-at="2021-11-02T04:32:32Z" duration-ms="15563" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- positiveTest -->
+      </class> <!-- com.simplilearn.workshop.ICINmain.PositiveTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
