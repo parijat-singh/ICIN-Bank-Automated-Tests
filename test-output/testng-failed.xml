@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.simplilearn.workshop.ICINmain.NegativeTests">
+      <class name="com.simplilearn.workshop.ICINAdmin.NegativeTests">
         <methods>
-          <include name="positiveTest"/>
+          <include name="negativeTest"/>
         </methods>
-      </class> <!-- com.simplilearn.workshop.ICINmain.NegativeTests -->
+      </class> <!-- com.simplilearn.workshop.ICINAdmin.NegativeTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

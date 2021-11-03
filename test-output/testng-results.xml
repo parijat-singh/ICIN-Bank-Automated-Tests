@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-03T05:06:11Z" name="Default suite" finished-at="2021-11-03T05:06:22Z" duration-ms="11034">
+  <suite started-at="2021-11-03T05:24:56Z" name="Default suite" finished-at="2021-11-03T05:25:05Z" duration-ms="8964">
     <groups>
     </groups>
-    <test started-at="2021-11-03T05:06:11Z" name="Default test" finished-at="2021-11-03T05:06:22Z" duration-ms="11034">
-      <class name="com.simplilearn.workshop.ICINAdmin.PositiveTests">
-        <test-method signature="positiveTest()[pri:0, instance:com.simplilearn.workshop.ICINAdmin.PositiveTests@6986852]" started-at="2021-11-03T05:06:11Z" name="positiveTest" finished-at="2021-11-03T05:06:22Z" duration-ms="11014" status="PASS">
+    <test started-at="2021-11-03T05:24:56Z" name="Default test" finished-at="2021-11-03T05:25:05Z" duration-ms="8964">
+      <class name="com.simplilearn.workshop.ICINAdmin.NegativeTests">
+        <test-method signature="negativeTest()[pri:0, instance:com.simplilearn.workshop.ICINAdmin.NegativeTests@6986852]" started-at="2021-11-03T05:24:56Z" name="negativeTest" finished-at="2021-11-03T05:25:05Z" duration-ms="8932" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- positiveTest -->
-      </class> <!-- com.simplilearn.workshop.ICINAdmin.PositiveTests -->
+        </test-method> <!-- negativeTest -->
+      </class> <!-- com.simplilearn.workshop.ICINAdmin.NegativeTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
