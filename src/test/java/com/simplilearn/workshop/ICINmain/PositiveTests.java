@@ -59,10 +59,6 @@ public class PositiveTests {
 		Assert.assertTrue(homeButton.isDisplayed(), "ICIN Bank Home button is not visible");
 		// sleep(1000);
 
-		// WebElement logoutButton =
-		// driver.findElement(By.xpath("//app-root/app-home/app-navbar/nav/div[@class='collapse
-		// navbar-collapse']//div[@class='dropdown-menu show']/a[2]"));
-		// Assert.assertTrue(logoutButton.isDisplayed(),"Logout button is not visible");
 
 		// screen messages
 		WebElement welcomeMessage = driver.findElement(
