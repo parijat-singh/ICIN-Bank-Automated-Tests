@@ -46,7 +46,7 @@ public class PositiveTests {
 		WebElement loginButton = driver
 				.findElement(By.xpath("//app-root/app-login//form//button[@class='btn btn-primary']"));
 		loginButton.click();
-		sleep(1000);
+		sleep(2000);
 
 		// verification on new url
 		String expectedUrl = GlobalConstants.baseUrl + "home";
@@ -74,7 +74,7 @@ public class PositiveTests {
 						+ "\n Expected Message: " + expectedMessage);
 
 		/*********************************************************************/
-		/************************ Transfer Money Tests *************************/
+		/************************ Transfer Money Tests ***********************/
 		/*********************************************************************/
 
 		// click Transfer Money
@@ -92,13 +92,8 @@ public class PositiveTests {
 
 		WebElement xferButton = driver.findElement(By.xpath(
 				"//app-root/app-transfer-between-accounts//form[@method='post']//button[@class='btn btn-info form-control']"));
-		Assert.assertTrue(xferButton.isDisplayed(), "ICIN Bank Home button is not visible");
+		Assert.assertTrue(xferButton.isDisplayed(), "Transfer button is not visible");
 		// sleep(1000);
-
-		// WebElement logoutButton =
-		// driver.findElement(By.xpath("//app-root/app-home/app-navbar/nav/div[@class='collapse
-		// navbar-collapse']//div[@class='dropdown-menu show']/a[2]"));
-		// Assert.assertTrue(logoutButton.isDisplayed(),"Logout button is not visible");
 
 		// screen messages
 		WebElement transferMessage = driver.findElement(
@@ -127,19 +122,67 @@ public class PositiveTests {
 				"//app-root/app-transfer-between-accounts//form[@method='post']//button[@class='btn btn-info form-control']"));
 		tButton.click();
 		sleep(3000);
-		// 
-		WebElement transferSuccMessage = driver.findElement(
-				By.xpath("/html//h2[@id='swal2-title']"));
+		//
+		WebElement transferSuccMessage = driver.findElement(By.xpath("/html//h2[@id='swal2-title']"));
 		actualMessage = transferSuccMessage.getText();
 		expectedMessage = "Transaction Completed Successfully";
 		Assert.assertTrue(actualMessage.contains(expectedMessage),
 				"Actual message does not contain expected message. \n" + "Actual Message:" + actualMessage
 						+ "\n Expected Message: " + expectedMessage);
-		// 
-		WebElement tOKButton = driver.findElement(By.xpath(
-				"/html//div[@role='dialog']/div[@class='swal2-actions']/button[1]"));
+		//
+		WebElement tOKButton = driver
+				.findElement(By.xpath("/html//div[@role='dialog']/div[@class='swal2-actions']/button[1]"));
 		tOKButton.click();
+		sleep(1000);
+
+		/*********************************************************************/
+		/************************ Checkbook request *************************/
+		/*********************************************************************/
+
+		// click checkbook request
+		WebElement ReqCheckbooklink = driver.findElement(By.xpath(
+				"//app-root/app-transfer-between-accounts/app-navbar//div[@class='collapse navbar-collapse']//a[@href='/chequebookRequest']"));
+		ReqCheckbooklink.click();
+		sleep(1000);
+
+		// verification on new url
+		expectedUrl = GlobalConstants.baseUrl + "chequebookRequest";
+		System.out.println("Expected URL=" + expectedUrl);
+		actualUrl = driver.getCurrentUrl();
+		Assert.assertEquals(actualUrl, expectedUrl, "Actual page url is not the same as expected");
+
+		// fields visible
+		WebElement checkbookReqButton = driver.findElement(
+				By.xpath("/html//app-root/app-cheque-book-request//button[@class='btn btn-info form-control']"));
+		Assert.assertTrue(checkbookReqButton.isDisplayed(), "Checkbook request button is not visible");
+		// sleep(1000);
+
+		// screen messages
+		WebElement checkbookReqMessage = driver
+				.findElement(By.xpath("//app-root/app-cheque-book-request//h3[.='Request Cheque Book']"));
+		actualMessage = checkbookReqMessage.getText();
+		expectedMessage = "Request Cheque Book";
+		Assert.assertTrue(actualMessage.contains(expectedMessage),
+				"Actual message does not contain expected message. \n" + "Actual Message:" + actualMessage
+						+ "\n Expected Message: " + expectedMessage);
+
+		// click Request checkbook
+		WebElement RCButton = driver.findElement(
+				By.xpath("/html//app-root/app-cheque-book-request//button[@class='btn btn-info form-control']"));
+		RCButton.click();
 		sleep(3000);
+		//
+		WebElement RCfailMessage = driver.findElement(By.xpath("/html//div[@id='swal2-content']"));
+		actualMessage = RCfailMessage.getText();
+		expectedMessage = "Error code 120: Your previous chequebook request is still pending.";
+		Assert.assertTrue(actualMessage.contains(expectedMessage),
+				"Actual message does not contain expected message. \n" + "Actual Message:" + actualMessage
+						+ "\n Expected Message: " + expectedMessage);
+		//
+		WebElement RCOKButton = driver
+				.findElement(By.xpath("/html//div[@role='dialog']/div[@class='swal2-actions']/button[1]"));
+		RCOKButton.click();
+		sleep(1000);
 
 		// close browser
 		driver.quit();
